@@ -8,7 +8,7 @@ const app = new Vue(App)
 app.$mount()
 
 export default {
-  config: {
+  config: { // app.json
     pages: [],
     window: {
       backgroundTextStyle: 'light',
