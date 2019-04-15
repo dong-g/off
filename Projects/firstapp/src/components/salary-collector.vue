@@ -17,9 +17,7 @@
       <button @click="calculateTax"></button>
     </div>
     <div>
-      <table>
-
-      </table>
+      <span v-model ="taxResults"></span>>
     </div>
 </template>
 
@@ -32,17 +30,17 @@
             salay: 0,
             fundation: 0,
             extra: 0
-          }
+          },
+          taxResults: ""
         }
       },
       methods: {
         calculate () {
-          var results = util.calculateTax(this.salaryCollection.salay, this.salaryCollection.extra, this.salaryCollection.fundation);
+          this.taxResults = util.calculateTax(this.salaryCollection.salay, this.salaryCollection.extra, this.salaryCollection.fundation);
         }
       }
     }
 </script>
 
 <style scoped>
-
 </style>
