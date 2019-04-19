@@ -3,8 +3,12 @@ export function calculateTax(pay, extra, six){
   var taxSum = 0;
   var sum = 0;
   var paylist = [];
+  var temp = 0;
 
   if(!Array.isArray(pay)){
+    if(pay <= 5000){
+      return results;
+    }
     for(var i = 0 ; i < 12;i++){
       paylist.push(pay);
     }
