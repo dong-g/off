@@ -33,9 +33,9 @@
       data () {
         return {
           salaryCollection: {
-            salary: 10000,
-            fundation: 0,
-            extra: 0
+            salary: 12000,
+            fundation: '',
+            extra: ''
           },
           calculateStr: '计算',
           taxResults: [],
@@ -51,7 +51,8 @@
           if(results.length > 0){
             this.taxResults = results;
             this.needDisplayCharts = true;
-            this.$refs.resultdisplay.onInit();
+            if(this.$refs.resultdisplay != null)
+              this.$refs.resultdisplay.refreshData(results);
           }
           else{
             this.taxResults = '不用缴税';

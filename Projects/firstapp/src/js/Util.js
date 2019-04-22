@@ -5,10 +5,15 @@ export function calculateTax(pay, extra, six){
   var paylist = [];
   var temp = 0;
 
+
+  pay = (pay == ''? 0:pay);
+  extra = (extra == ''? 0:extra);
+  six = (six == ''? 0:six);
+  
+  if(pay <= 5000){
+    return results;
+  }
   if(!Array.isArray(pay)){
-    if(pay <= 5000){
-      return results;
-    }
     for(var i = 0 ; i < 12;i++){
       paylist.push(pay);
     }

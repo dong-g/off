@@ -5,7 +5,8 @@
 </template>
 
 <script type="text/javascript">
-	import echarts from 'echarts';
+	//import echarts from 'echarts';
+	import * as echarts from "../../static/echarts.min.js";
 	import mpvueEcharts from 'mpvue-echarts';
 
 	let chart = null;
@@ -33,10 +34,18 @@
 					show: true,
 					trigger: 'axis'
 				},
+				grid: {
+					left: 10,
+					containLabel:true
+				},
 				xAxis:{
+					name: '月',
 					type:'category',
 					//data: ['一','二','三','四','五','六','七','八','九','十','十一','十二']
-					data: [1,2,3,4,5,6,7,8,9,10,11,12]
+					data: [1,2,3,4,5,6,7,8,9,10,11,12],
+					"axisLabel":{
+			    		interval: 0
+			    	}
 				},
 				yAxis:{
 					name: '金额',
@@ -51,14 +60,15 @@
 				series:[{
 					type: 'line',
 					smooth: true,
-			        data: this.results
+			        data: this.results,
+			        itemStyle : { normal: {label : {show: true}}}
 		    	}]
 			  };
 			  chart.setOption(option);
 			  return chart; // 返回 chart 后可以自动绑定触摸操作
 			},
-			refreshData(){
-				chart.setOption({series:[{data:this.results}]});
+			refreshData(results){
+				chart.setOption({series:[{data:results}]});
 			}
 		},
 		components: {
