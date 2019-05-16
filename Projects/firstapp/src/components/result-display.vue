@@ -29,10 +29,11 @@
 			  canvas.setChart(chart);
 
 			  var option = {
-			  	title: {text: '每月缴税金额'},
+			  	
 				tooltip: {
 					show: true,
-					trigger: 'axis'
+					trigger: 'axis',
+					confine: true
 				},
 				grid: {
 					left: 10,
@@ -60,8 +61,21 @@
 				series:[{
 					type: 'line',
 					smooth: true,
-			        data: this.results,
-			        itemStyle : { normal: {label : {show: true}}}
+			        data: this.results
+			        // itemStyle : { 
+			        // 				normal: {
+			        // 					label : {
+			        // 						show: true, 
+			        // 						textStyle : {
+			        // 							color : 'grey', 
+           //                          			fontSize : '10'
+           //                      			}
+           //                      		}
+           //                      	},
+           //                      	emphasis : {
+					      //               label : {show: false}
+					      //           }
+           //                      }
 		    	}]
 			  };
 			  chart.setOption(option);
