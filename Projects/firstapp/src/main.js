@@ -14,7 +14,7 @@ export default {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: '第一个小程序',
-      navigationBarTextStyle: 'Test1'
+      navigationBarTextStyle: 'test2'
     }
   }
 }
