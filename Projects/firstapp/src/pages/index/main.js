@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
   config: {
-    'navigationBarTitleText': '文章列表页面'
+    'navigationBarTitleText': 'test2'
   }
 }
